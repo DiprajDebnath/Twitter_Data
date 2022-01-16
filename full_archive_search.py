@@ -18,3 +18,4 @@ my_expansions = ['attachments.poll_ids', 'attachments.media_keys', 'author_id','
 with open('tweets.json', 'a+') as filehandle:
     for tweet in tweepy.Paginator(client.search_all_tweets, query='#RRBNTPC',tweet_fields=my_tweet_fields,start_time='2022-01-01T00:00:00Z', max_results=100,user_fields=my_user_fields).flatten(limit=1000):
         json.dump(tweet, filehandle)
+        print(tweet)
